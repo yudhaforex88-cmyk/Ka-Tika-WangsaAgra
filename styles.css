@@ -1,0 +1,144 @@
+:root {
+  --bg: #101010;
+  --panel: #1a1a1a;
+  --card: #232323;
+  --text: #f4efe7;
+  --muted: #c4b5a1;
+  --gold: #cfab68;
+  --gold-soft: #f0d7a4;
+  --line: rgba(207, 171, 104, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Inter, system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(207, 171, 104, 0.1), transparent 44%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.025) 8px, transparent 8px, transparent 16px),
+    var(--bg);
+}
+
+.container {
+  width: min(1050px, 92vw);
+  margin: 0 auto;
+  padding: 2.5rem 0 3.5rem;
+}
+
+.hero {
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin: 0.2rem 0;
+  font-family: 'Times New Roman', Georgia, serif;
+  color: var(--gold-soft);
+  letter-spacing: 0.03em;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 780px;
+}
+
+.panel {
+  background: linear-gradient(160deg, rgba(207, 171, 104, 0.09), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  margin-top: 1rem;
+}
+
+.panel h2,
+.subcard h3 {
+  margin: 0 0 0.7rem;
+  font-family: 'Times New Roman', Georgia, serif;
+  color: var(--gold-soft);
+}
+
+.row {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+input,
+button {
+  border-radius: 10px;
+  border: none;
+}
+
+input {
+  background: var(--card);
+  color: var(--text);
+  padding: 0.72rem 0.8rem;
+  flex: 1 1 250px;
+}
+
+button {
+  background: var(--gold);
+  color: #25190c;
+  padding: 0.72rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.6rem;
+}
+
+.card,
+.subcard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.card span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.card strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 1.08rem;
+  color: var(--gold-soft);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin-top: 0.75rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text);
+}
+
+@media (max-width: 760px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
