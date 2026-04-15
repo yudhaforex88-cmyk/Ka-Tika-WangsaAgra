@@ -1,79 +1,65 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ka-Tika Super App Kalender Bali</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Ka-Tika Digital Calendar</title>
+    <link rel="stylesheet" href="./src/styles/main.css" />
   </head>
   <body>
-    <main class="container">
-      <header class="hero">
-        <p class="kicker">Sastra Wariga • State Machine Engine</p>
-        <h1>Ka-Tika Super App</h1>
-        <p>
-          Sistem kalender Bali kustom berbasis titik anchor 25 Juni 2025, 18.00 WITA, dengan mesin analisis
-          Dewasa Ayu, Rainan, dan Odalan modular.
-        </p>
-      </header>
+    <main class="app" data-gesture>
+      <section class="card header-main">
+        <div class="row-between">
+          <p data-date class="muted">-</p>
+          <button class="btn" data-theme-toggle type="button" style="max-width: 110px">☀️ Light</button>
+        </div>
+        <h1 data-saptawara>REDITE</h1>
+      </section>
 
-      <section class="panel">
-        <h2>Cari Tanggal Masehi</h2>
-        <div class="row">
-          <input id="search-date" type="datetime-local" step="60" />
-          <button id="search-button" type="button">Analisis Hari</button>
+      <section class="card pair">
+        <div>
+          <h2>Triwara</h2>
+          <p data-triwara>Kajeng</p>
+        </div>
+        <div>
+          <h2>Pancawara</h2>
+          <p data-pancawara>Paing</p>
         </div>
       </section>
 
-      <section class="panel">
-        <h2>Cek Weton</h2>
-        <div class="row">
-          <input id="weton-date" type="datetime-local" step="60" />
-          <button id="weton-button" type="button">Cek Weton & Otonan</button>
+      <section class="card split">
+        <div>
+          <h2 class="muted">Sasih</h2>
+          <p data-sasih>Kasa</p>
+        </div>
+        <div>
+          <h2 class="muted">Wuku</h2>
+          <p data-wuku>Sinta</p>
         </div>
       </section>
 
-      <section class="panel" id="weton-panel" hidden>
-        <h2>Hasil Cek Weton</h2>
-        <p><strong>Kelahiran:</strong> <span id="weton-meta">-</span></p>
-        <p><strong>Otonan Berikutnya:</strong> <span id="otonan-meta">-</span></p>
-      </section>
+      <section class="card moon-badge" data-moon></section>
 
-      <section class="panel" id="result-panel" hidden>
-        <h2>Status Hari</h2>
+      <section class="card" data-holydays></section>
 
-        <div class="grid">
-          <article class="card"><span>Masehi</span><strong id="masehi-view">-</strong></article>
-          <article class="card"><span>Wuku</span><strong id="wuku-view">-</strong></article>
-          <article class="card"><span>Saptawara</span><strong id="sapta-view">-</strong></article>
-          <article class="card"><span>Pancawara</span><strong id="panca-view">-</strong></article>
-          <article class="card"><span>Triwara</span><strong id="tri-view">-</strong></article>
-          <article class="card"><span>Sasih</span><strong id="sasih-view">-</strong></article>
-          <article class="card"><span>Fase Sasih</span><strong id="fase-view">-</strong></article>
-        </div>
+      <section class="card"><p><strong>Ingkel:</strong> <span data-ingkel>Ingkel Wong</span></p></section>
 
-        <div class="split">
-          <article class="subcard">
-            <h3>Rainan</h3>
-            <ul id="rainan-list"></ul>
-          </article>
-          <article class="subcard">
-            <h3>Odalan</h3>
-            <ul id="odalan-list"></ul>
-          </article>
-        </div>
+      <section class="card details-card" data-details role="button" aria-label="Buka detail hari"></section>
 
-        <article class="subcard">
-          <h3>Status Dewasa Ayu</h3>
-          <p><strong>Hari baik untuk:</strong> <span id="dewasa-good">-</span></p>
-          <p><strong>Hari kurang baik untuk:</strong> <span id="dewasa-bad">-</span></p>
-        </article>
+      <section class="nav-day">
+        <button class="btn" type="button" data-prev>⬅️ Hari Sebelumnya</button>
+        <button class="btn" type="button" data-next>Hari Berikutnya ➡️</button>
       </section>
     </main>
 
-    <script src="core-engine.js"></script>
-    <script src="databases.js"></script>
-    <script src="features.js"></script>
-    <script src="main.js"></script>
+    <nav class="bottom-nav">
+      <button class="active" type="button">Kalender</button>
+      <button type="button">Cek Weton</button>
+      <button type="button">Dewasa</button>
+      <button type="button">Pencarian</button>
+      <button type="button">Setting</button>
+    </nav>
+
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>
